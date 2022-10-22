@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HappyBirthday</title>
+        <meta charset="uft - 8">
+        <link rel="icon" type="image/x-icon" href="./assets/img/Favicon/e966b59d12f16cb22ef7f14d30ea2076.png">
+        <link rel="stylesheet" href="./assets/css/styte.css">
+       
+    </head>
+    <body>
+        <audio autoplay>
+            <source src="./assets/audio/Happy Birthday To You! (Traditional) First Time on YouTube.mp3" type="audio/mpeg">
+        </audio>
+        <div id="main">
+            <div class="page page1">
+                <div class="box">
+                    <h3 class="title font-text" >Bạn muốn nhận quà không ? </h3>
+                    <div class="row">
+                        <button type="button" class="btns btn1 js-btns-page">
+                            Có
+                        </button>
+                        <button id="No" type="button" class="btns btn2 js-btns-page">
+                            Không
+                        </button>
+                    </div>
+                </div>
+                <img class="avt avt1" src="./assets/img/Person/p1.jpg" alt="Thảo Nhi nè">
+                <img class="avt avt2" src="./assets/img/Person/p2.jpg" alt="Thảo Nhi nè">
+                <img class="avt avt3" src="./assets/img/Person/p3.jpg" alt="Thảo Nhi nè">
+                <img class="avt avt4" src="./assets/img/Person/p4.jpg" alt="Thảo Nhi nè">
+                <img class="avt avt5" src="./assets/img/Person/p5.jpg" alt="Thảo Nhi nè">
+            </div>
+           
+            <div class="page page2">
+                <div class="video">
+                    <video src="./assets/vid/Chúc mừng Sinh nhật, NHi.mp4" controls></video>
+                    <video src="./assets/vid/Chúc mừng Sinh nhật, NHi (2).mp4" controls></video>
+                    <video src="./assets/vid/Chúc mừng Sinh nhật, NHi (3).mp4" controls></video>
+                </div>
+                <div class="btn-pre" id="js-btn-pre">
+                    <button class="btns">Trang trước</button>
+                </div>
+                
+            </div>
+        </div>
+        <script>
+           var btnNo = document.getElementById("No");
+           var btnPre = document.getElementById("js-btn-pre");
+           const pageNext = document.querySelectorAll('.js-btns-page')
+           const pageOne = document.querySelector('.page1')
+           const pageSecond = document.querySelector('.page2')
+           
+           btnNo.onmouseenter = function(){
+               btnNo.innerHTML = 'Có' ;
+           };
+           btnNo.onmouseleave = function(){
+               btnNo.innerHTML = 'Không';
+           };
+           btnPre.onclick = function(){
+               location.reload();
+           };
+           for(const btns of pageNext){
+               btns.addEventListener('click',function(event){
+                    pageOne.classList.add('page-close');
+                    pageSecond.classList.add('page-open')
+               })
+           }
+           
+
+        </script>
+        
+    </body>
+</html>
